@@ -49,29 +49,43 @@ app.controller('startCtrl', function($q, $http, $scope, $timeout, pitneyBowes) {
     };
     $scope.genderData = [];
     $scope.genderLabel = [];
-    $scope.ageData = [];
+    $scope.ageData = [[]];
     $scope.ageLabel = [];
-    $scope.series = [];
+    $scope.incomeData = [[]];
+    $scope.incomeLabel = [];
+    $scope.educationData = [[]];
+    $scope.educationLabel = [];
     $scope.getDemographics = () => {
       console.log('2: ', latitude, longitude);
         navigator.geolocation.getCurrentPosition((position) => {
                 pitneyBowes.getDemographics(latitude, longitude).then(function(res) {
                   console.log('res.data', res.data);
-
                     var gender = res.data.themes.genderTheme.individualValueVariable;
                     gender.forEach(d => {
                       $scope.genderLabel.push(d.name);
                       $scope.genderData.push(d.value);
+                      // $scope.genderData[1].push(d.value);
                     });
 
                     var age = res.data.themes.ageTheme.rangeVariable[0].field;
-                    console.log('age:', age);
                     age.forEach(d => {
 
                       $scope.ageLabel.push(d.description);
-                      $scope.ageData.push(d.value);
+                      $scope.ageData[0].push(d.value);
                     });
-                    $scope.series.push('a');
+
+                    var income = res.data.themes.incomeTheme.rangeVariable[0].field;
+                    income.forEach(d => {
+                      $scope.incomeLabel.push(d.description);
+                      $scope.incomeData[0].push(d.value);
+                    });
+
+                    var education = res.data.themes.educationalAttainmentTheme.rangeVariable[0].field;
+                    education.forEach(d => {
+                      $scope.educationLabel.push(d.description);
+                      $scope.educationData[0].push(d.value);
+                    });
+
                     $scope.demographicsData = res.data;
                 }, function(err) {
                     console.log('location not found.');
