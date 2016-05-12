@@ -41,20 +41,16 @@ app.controller('startCtrl', function($q, $http, $scope, $timeout, pitneyBowes) {
     };
     $scope.genderData = [];
     $scope.genderLabel = [];
-    $scope.ageData = [
-        []
-    ];
+    $scope.ageData = [[]];
     $scope.ageLabel = [];
     $scope.incomeData = [];
     $scope.incomeLabel = [];
-    $scope.educationData = [
-        []
-    ];
+    $scope.educationData = [[]];
     $scope.educationLabel = [];
-    $scope.transportationData = [
-        []
-    ];
+    $scope.transportationData = [[]];
     $scope.transportationLabel = [];
+    $scope.assetsData = [];
+    $scope.assetsLabel = [];
 
     $scope.getDemographics = () => {
             //   console.log('2: ', latitude, longitude);
@@ -572,6 +568,12 @@ app.controller('startCtrl', function($q, $http, $scope, $timeout, pitneyBowes) {
             education.forEach(d => {
                 $scope.educationLabel.push(d.description);
                 $scope.educationData[0].push(d.value);
+            });
+
+            var assets = res.data.themes.financialProductsTheme.rangeVariable[0].field;
+            assets.forEach(d => {
+                $scope.assetsLabel.push(d.description);
+                $scope.assetsData.push(d.value);
             });
 
             var transportation = res.data.themes.commuterPatternsTheme.rangeVariable[0].field;
