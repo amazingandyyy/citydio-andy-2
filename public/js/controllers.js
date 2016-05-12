@@ -570,8 +570,9 @@ app.controller('startCtrl', function($q, $http, $scope, $timeout, pitneyBowes) {
             });
             var education = res.data.themes.educationalAttainmentTheme.rangeVariable[0].field;
             education.forEach(d => {
-                $scope.educationLabel.push('');
+                $scope.educationLabel.push(d.description);
                 $scope.educationData[0].push(d.value);
+                console.log('$scope.educationData', $scope.educationData);
             });
 
             var assets = res.data.themes.financialProductsTheme.rangeVariable[0].field;

@@ -26,12 +26,12 @@
         <hr>
         <button ng-click="getDemographics(); showMoreData=true" type="button" class="btn btn-success">
             <i class="fa fa-thumb-tack"></i>
-            <br>Read this area more!
+            <br>Get more info
         </button>
         <br>
         <br>
         <div ng-if="showMoreData">
-    
+
         <div class="dataContainer col-sm-6">
           <h3>Gender</h3>
           <canvas class="chart chart-doughnut" chart-data="genderData" chart-labels="genderLabel" chart-legend="true">
@@ -53,7 +53,7 @@
 
         <div class="dataContainer col-sm-6">
           <h3>Education</h3>
-          <canvas class="chart chart-bar" chart-data="educationData" chart-labels="educationLabel" chart-legend="true">
+          <canvas class="chart chart-bar" chart-data="educationData" chart-labels="educationLabel" chart-legend="false">
           </canvas>
         </div>
 

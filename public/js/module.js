@@ -26,3 +26,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/');
 });
+
+app.config(function (ChartJsProvider) {
+  ChartJsProvider.setOptions({ colours : [ '#18bc9c', '#1a242f', '#798d8f', '#217dbb', '#c87f0a', '#d62c1a', '#18bc9c', '#1a242f', '#798d8f', '#217dbb', '#c87f0a', '#d62c1a'] });
+});
