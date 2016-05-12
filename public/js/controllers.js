@@ -4,9 +4,6 @@ var app = angular.module('CitydioApp');
 
 app.controller('homeCtrl', function($scope) {
     console.log('homeCtrl');
-
-
-
 });
 app.controller('startCtrl', function($q, $http, $scope, $timeout, pitneyBowes) {
 
