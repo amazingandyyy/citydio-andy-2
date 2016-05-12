@@ -51,6 +51,10 @@ app.controller('startCtrl', function($q, $http, $scope, $timeout, pitneyBowes) {
     $scope.transportationLabel = [];
     $scope.assetsData = [];
     $scope.assetsLabel = [];
+    $scope.raceData = [];
+    $scope.raceLabel = [];
+    $scope.maritalData = [[]];
+    $scope.maritalLabel = [];
 
     $scope.getDemographics = () => {
             //   console.log('2: ', latitude, longitude);
@@ -582,6 +586,18 @@ app.controller('startCtrl', function($q, $http, $scope, $timeout, pitneyBowes) {
                 $scope.transportationData[0].push(d.value);
             });
 
+
+            var race = res.data.themes.raceTheme.rangeVariable[0].field;
+            race.forEach(d => {
+                $scope.raceLabel.push(d.description);
+                $scope.raceData.push(d.value);
+            });
+
+            var marital = res.data.themes.maritalStatusTheme.rangeVariable[0].field;
+            marital.forEach(d => {
+              $scope.maritalLabel.push(d.description);
+              $scope.maritalData[0].push(d.value);
+            });
 
 //     }, function(err) {
 //         console.log('location not found.');
