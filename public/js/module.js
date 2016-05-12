@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('CitydioApp', ['ui.router']);
+var app = angular.module('CitydioApp', ['ui.router', 'chart.js']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
 

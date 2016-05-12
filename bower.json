@@ -19,6 +19,11 @@
     "font-awesome": "^4.6.2",
     "animate.css": "^3.5.1",
     "angular-ui-router": "^0.2.18",
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+    "angular-chart.js": "^0.10.2",
+    "Chart.js": "^2.1.2"
+  },
+  "resolutions": {
+    "Chart.js": "~1.1.1"
   }
 }

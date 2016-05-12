@@ -1,3 +1,5 @@
+
+
 <div class="container text-center">
     <!-- <br> -->
     <!-- <br> -->
@@ -28,17 +30,34 @@
             <br>Read this area more!
         </button>
         <br><br>
+          <div class="canvas">
+          <!-- <div ng-if="demographicsData.themes">
+          <div class="col-sm-6"><pre><h2>genderTheme</h2>{{demographicsData.themes.genderTheme.individualValueVariable | json }}</pre></div> -->
+          <h3>Gender</h3>
+          <canvas class="chart chart-pie"
+          chart-data="genderData" chart-labels="genderLabel">
+          </canvas>
+          </div>
 
-        <div ng-if="demographicsData.themes">
-          <div class="col-sm-6"><pre><h2>genderTheme</h2>{{demographicsData.themes.genderTheme.individualValueVariable | json }}</pre></div>
-          <div class="col-sm-6"><pre><h2>incomeTheme</h2>{{demographicsData.themes.incomeTheme.rangeVariable | json }}</pre></div>
+        <div class="canvas">
+          <h3>Age</h3>
+          <canvas class="chart chart-polar-area"
+            chart-data="ageData" chart-labels="ageLabel">
+          </canvas>
+        </div>
+
+
+
+
+
+          <!-- <div class="col-sm-6"><pre><h2>incomeTheme</h2>{{demographicsData.themes.incomeTheme.rangeVariable | json }}</pre></div>
           <div class="col-sm-6"><pre><h2>raceTheme</h2>{{demographicsData.themes.raceTheme.rangeVariable | json }}</pre></div>
           <div class="col-sm-6"><pre><h2>ethnicityTheme</h2>{{demographicsData.themes.ethnicityTheme.individualValueVariable | json }}</pre></div>
           <div class="col-sm-6"><pre><h2>maritalStatusTheme</h2>{{demographicsData.themes.maritalStatusTheme.rangeVariable | json }}</pre></div>
           <div class="col-sm-6"><pre><h2>automobileTheme</h2>{{demographicsData.themes.automobileTheme.rangeVariable | json }}</pre></div>
           <div class="col-sm-6"><pre><h2>purchasingBehaviorTheme</h2>{{demographicsData.themes.purchasingBehaviorTheme.individualValueVariable | json }}</pre></div>
           <div class="col-sm-6"><pre><h2>educationalAttainmentTheme</h2>{{demographicsData.themes.educationalAttainmentTheme.rangeVariable | json }}</pre></div>
-          <div class="col-sm-6"><pre><h2>commuterPatternsTheme</h2>{{demographicsData.themes.commuterPatternsTheme.rangeVariable | json }}</pre></div>
-        </div>
+          <div class="col-sm-6"><pre><h2>commuterPatternsTheme</h2>{{demographicsData.themes.commuterPatternsTheme.rangeVariable | json }}</pre></div> -->
+        <!-- </div> -->
     </div>
 </div>

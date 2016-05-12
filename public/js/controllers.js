@@ -2,10 +2,16 @@
 
 var app = angular.module('CitydioApp');
 
-app.controller('homeCtrl', function() {
+app.controller('homeCtrl', function($scope) {
     console.log('homeCtrl');
+
+
+
 });
 app.controller('startCtrl', function($q, $http, $scope, $timeout, pitneyBowes) {
+
+  // $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
+  // $scope.data = [300, 500, 100];
     var initializing = true
     console.log('photoCtrl');
     $scope.loading = false;
@@ -40,12 +46,32 @@ app.controller('startCtrl', function($q, $http, $scope, $timeout, pitneyBowes) {
                 // });
             }
         })
-    }
+    };
+    $scope.genderData = [];
+    $scope.genderLabel = [];
+    $scope.ageData = [];
+    $scope.ageLabel = [];
+    $scope.series = [];
     $scope.getDemographics = () => {
       console.log('2: ', latitude, longitude);
         navigator.geolocation.getCurrentPosition((position) => {
                 pitneyBowes.getDemographics(latitude, longitude).then(function(res) {
-                    console.log(res);
+                  console.log('res.data', res.data);
+
+                    var gender = res.data.themes.genderTheme.individualValueVariable;
+                    gender.forEach(d => {
+                      $scope.genderLabel.push(d.name);
+                      $scope.genderData.push(d.value);
+                    });
+
+                    var age = res.data.themes.ageTheme.rangeVariable[0].field;
+                    console.log('age:', age);
+                    age.forEach(d => {
+
+                      $scope.ageLabel.push(d.description);
+                      $scope.ageData.push(d.value);
+                    });
+                    $scope.series.push('a');
                     $scope.demographicsData = res.data;
                 }, function(err) {
                     console.log('location not found.');

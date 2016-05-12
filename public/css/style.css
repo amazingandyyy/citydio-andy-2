@@ -1,7 +1,13 @@
+
 button.btn {
     outline: none !important;
     border: none !important;
 }
 pre{
     text-align: left;
+}
+
+.canvas {
+  height: 300px;
+  width: 300px;
 }
