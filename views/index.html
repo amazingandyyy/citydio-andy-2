@@ -3,7 +3,7 @@
 
 <head>
     <title>
-        Citydio
+        Citygraph
     </title>
     <link rel='stylesheet' href='/css/style.css' />
     <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
@@ -16,19 +16,19 @@
 
 </head>
 
-<body ng-app="CitydioApp" >
-<div class="container text-center">
-    <h3>Citydio</h3>
-    <ul class="pager">
-   <li><a ui-sref="home">Home</a></li>
-   <li><a ui-sref="start">Start</a></li>
-   <li><a ui-sref="photo">Photo</a></li>
- </ul>
-</div>
-<hr>
-<div class="container">
-    <ui-view></ui-view>
-</div>
+<body ng-app="CitydioApp">
+    <div class="container text-center">
+        <h3>Citygraph</h3>
+        <ul class="pager">
+            <li><a ui-sref="home">Home</a></li>
+            <li><a ui-sref="start">Start</a></li>
+            <li><a href="https://citydio5.run.aws-usw02-pr.ice.predix.io/">Photo</a></li>
+        </ul>
+    </div>
+    <hr>
+    <div class="container">
+        <ui-view></ui-view>
+    </div>
     <script src="../js/module.js"></script>
     <script src="../js/controllers.js"></script>
     <script src="../js/services.js"></script>
