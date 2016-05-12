@@ -12,8 +12,8 @@ router.get('/getaddress/:latitude/:longitude', function(req, res) {
     // var API_KEY = 'JOrsCaGbL3pfK0tjbP8i9OyQOWG7hfm3';
     // var SECRET = 'h8YScAcGeJjY7aYC';
 
-    var API_KEY = 'v97RTHqAwCUNIolJLOyptoEtxLlegAxA';
-    var SECRET = 'zb1fJmErTNKnvZPc';
+    var API_KEY = 'qoXCGzO0IhuwUCyUdsOyO18OkM7Nfucv';
+    var SECRET = 'YQmEPdIh0CqtsgZD';
     var oauthUrl = 'http://api.pitneybowes.com/oauth/token'
     var key = Base64.encode(`${API_KEY}:${SECRET}`);
 
@@ -42,8 +42,8 @@ router.get('/getDemographics/:latitude/:longitude', function(req, res) {
     var latitude = req.params.latitude;
     var longitude = req.params.longitude;
 
-    var API_KEY = 'JOrsCaGbL3pfK0tjbP8i9OyQOWG7hfm3';
-    var SECRET = 'h8YScAcGeJjY7aYC';
+    var API_KEY = 'qoXCGzO0IhuwUCyUdsOyO18OkM7Nfucv';
+    var SECRET = 'YQmEPdIh0CqtsgZD';
     var oauthUrl = 'http://api.pitneybowes.com/oauth/token'
     var key = Base64.encode(`${API_KEY}:${SECRET}`);
 

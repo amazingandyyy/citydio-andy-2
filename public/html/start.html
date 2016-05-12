@@ -1,11 +1,15 @@
 <div class="text-center">
-    <!-- <br> -->
-    <!-- <br> -->
-    <h3>Demographics</h3>
+    <br>
+    <img src="https://stocklogos.com/sites/default/files/pitney1.jpg" style="max-width: 300px" />
+    <br>
+    <input type="text" ng-model="name">
+    <hr>
+    {{name}} have <h4>{{point}}</h4> points sa far!
+    <hr>
     <br>
     <button ng-click="getLocation()" type="button" class="btn btn-primary">
         <i class="fa fa-thumb-tack"></i>
-        <br>Get my location
+        <br>Check In
     </button>
     <!-- <br /> -->
     <!-- <br /> -->
@@ -21,67 +25,87 @@
         <br>
         <br>
         <p>latitude: {{coordinate.latitude}} - longitude: {{coordinate.longitude}}</p>
-        <h3>Address: {{coordinate.address}}</h3>
+        <h4>Address: {{coordinate.address}}</h4>
         <!-- <div class="col-sm-12"><pre>{{demographicsData}}</pre></div> -->
         <hr>
         <button ng-click="getDemographics(); showMoreData=true" type="button" class="btn btn-success">
             <i class="fa fa-thumb-tack"></i>
-            <br>Get more info
+            <br>Explore the location
         </button>
         <br>
         <br>
         <div ng-if="showMoreData">
+            <h3>Demographics</h3>
+            <div class="dataContainer col-sm-6">
+                <h3>Gender</h3>
+                <canvas class="chart chart-doughnut" chart-data="genderData" chart-labels="genderLabel" chart-legend="true">
+                </canvas>
+            </div>
+            <br>
+            <hr>
+            <br>
 
-        <div class="dataContainer col-sm-6">
-          <h3>Gender</h3>
-          <canvas class="chart chart-doughnut" chart-data="genderData" chart-labels="genderLabel" chart-legend="true">
-          </canvas>
+            <div class="dataContainer col-sm-6">
+                <h3>Age</h3>
+                <canvas class="chart chart-line" chart-data="ageData" chart-labels="ageLabel" chart-legend="true">
+                </canvas>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div class="dataContainer col-sm-6">
+                <h3>Income</h3>
+                <canvas class="chart chart-polar-area" chart-data="incomeData" chart-labels="incomeLabel" chart-legend="true">
+                </canvas>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div class="dataContainer col-sm-6">
+                <div style="min-height: 500px">
+                    <h3>Education</h3>
+                    <canvas class="chart chart-bar" chart-data="educationData" chart-labels="educationLabel" chart-legend="false">
+                    </canvas>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div class="dataContainer col-sm-6">
+                <h3>Transportation</h3>
+                <canvas class="chart chart-line" chart-data="transportationData" chart-labels="transportationLabel" chart-legend="true">
+                </canvas>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div class="dataContainer col-sm-6">
+                <h3>Household with financial assets</h3>
+                <canvas class="chart chart-pie" chart-data="assetsData" chart-labels="assetsLabel" chart-legend="true">
+                </canvas>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div class="dataContainer col-sm-6">
+                <h3>Race %</h3>
+                <canvas class="chart chart-doughnut" chart-data="raceData" chart-labels="raceLabel" chart-legend="true">
+                </canvas>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div class="dataContainer col-sm-6">
+                <h3>Marital Status</h3>
+                <canvas class="chart chart-bar" chart-data="maritalData" chart-labels="maritalLabel" chart-legend="true">
+                </canvas>
+            </div>
         </div>
-
-
-        <div class="dataContainer col-sm-6">
-          <h3>Age</h3>
-          <canvas class="chart chart-line" chart-data="ageData" chart-labels="ageLabel" chart-legend="true">
-          </canvas>
-        </div>
-
-        <div class="dataContainer col-sm-6">
-          <h3>Income</h3>
-          <canvas class="chart chart-polar-area" chart-data="incomeData" chart-labels="incomeLabel" chart-legend="true">
-          </canvas>
-        </div>
-
-        <div class="dataContainer col-sm-6">
-          <h3>Education</h3>
-          <canvas class="chart chart-bar" chart-data="educationData" chart-labels="educationLabel" chart-legend="false">
-          </canvas>
-        </div>
-
-        <div class="dataContainer col-sm-6">
-          <h3>Transportation</h3>
-          <canvas class="chart chart-line" chart-data="transportationData" chart-labels="transportationLabel" chart-legend="true">
-          </canvas>
-        </div>
-
-        <div class="dataContainer col-sm-6">
-          <h3>Household with financial assets</h3>
-          <canvas class="chart chart-pie" chart-data="assetsData" chart-labels="assetsLabel" chart-legend="true">
-          </canvas>
-        </div>
-
-        <div class="dataContainer col-sm-6">
-          <h3>Race %</h3>
-          <canvas class="chart chart-doughnut" chart-data="raceData" chart-labels="raceLabel" chart-legend="true">
-          </canvas>
-        </div>
-
-        <div class="dataContainer col-sm-6">
-          <h3>Marital Status</h3>
-          <canvas class="chart chart-bar" chart-data="maritalData" chart-labels="maritalLabel" chart-legend="true">
-          </canvas>
-        </div>
-        </div>
-
+        <br>
+        <hr>
+        <br>
+        <h1>You earn 2 <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+!</h1>
 
         <!-- <div class="col-sm-6"><pre><h2>incomeTheme</h2>{{demographicsData.themes.incomeTheme.rangeVariable | json }}</pre></div>
           <div class="col-sm-6"><pre><h2>raceTheme</h2>{{demographicsData.themes.raceTheme.rangeVariable | json }}</pre></div>
