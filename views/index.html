@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Citydio
+    </title>
+    <link rel='stylesheet' href='/css/style.css' />
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://bootswatch.com/united/bootstrap.min.css">
+
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <!-- <script src="/bower_components/animate.css/animate.min.css"></script> -->
+
+</head>
+
+<body ng-app="CitydioApp" >
+<div class="container text-center">
+    <h3>Citydio</h3>
+    <ul class="pager">
+   <li><a ui-sref="home">Home</a></li>
+   <li><a ui-sref="start">Start</a></li>
+   <li><a ui-sref="photo">Photo</a></li>
+ </ul>
+</div>
+<hr>
+<div class="container">
+    <ui-view></ui-view>
+</div>
+    <script src="../js/module.js"></script>
+    <script src="../js/controllers.js"></script>
+    <script src="../js/services.js"></script>
+</body>
+
+</html>
