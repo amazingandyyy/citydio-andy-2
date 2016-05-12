@@ -17,4 +17,7 @@ app.service('pitneyBowes', function($http) {
             url: `/api/getdemographics/${latitude}/${longitude}`
         });
     }
+    // this.Data = ()=>{
+    //
+    // }
 });
