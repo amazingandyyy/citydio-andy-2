@@ -559,7 +559,7 @@ app.controller('startCtrl', function($q, $http, $scope, $timeout, pitneyBowes) {
             var age = res.data.themes.ageTheme.rangeVariable[0].field;
             age.forEach(d => {
 
-                $scope.ageLabel.push(d.description);
+                $scope.ageLabel.push('');
                 $scope.ageData[0].push(d.value);
             });
 
@@ -570,7 +570,7 @@ app.controller('startCtrl', function($q, $http, $scope, $timeout, pitneyBowes) {
             });
             var education = res.data.themes.educationalAttainmentTheme.rangeVariable[0].field;
             education.forEach(d => {
-                $scope.educationLabel.push(d.description);
+                $scope.educationLabel.push('');
                 $scope.educationData[0].push(d.value);
             });
 
@@ -582,7 +582,7 @@ app.controller('startCtrl', function($q, $http, $scope, $timeout, pitneyBowes) {
 
             var transportation = res.data.themes.commuterPatternsTheme.rangeVariable[0].field;
             transportation.forEach(d => {
-                $scope.transportationLabel.push(d.description);
+                $scope.transportationLabel.push('');
                 $scope.transportationData[0].push(d.value);
             });
 
@@ -595,7 +595,7 @@ app.controller('startCtrl', function($q, $http, $scope, $timeout, pitneyBowes) {
 
             var marital = res.data.themes.maritalStatusTheme.rangeVariable[0].field;
             marital.forEach(d => {
-              $scope.maritalLabel.push(d.description);
+              $scope.maritalLabel.push('');
               $scope.maritalData[0].push(d.value);
             });
 
